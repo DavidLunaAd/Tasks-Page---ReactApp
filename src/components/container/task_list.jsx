@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LEVELS } from '../../models/levels.enum';
 import { Task } from '../../models/task.class';
 import TaskComponent from '../pure/task';
 import '../../styles/task.scss'
+import TaskForm from '../pure/forms/taskForm';
 
 const TaskListComponent = () => {
 
-const defaultTask = new Task('Example', 'default description', false, LEVELS.NORMAL)
+const defaultTask1 = new Task('Example1', 'default description', true, LEVELS.BLOCKING);
+const defaultTask2 = new Task('Example2', 'default description', false, LEVELS.NORMAL);
+const defaultTask3 = new Task('Example3', 'default description', false, LEVELS.URGENT);
+
+
+
+const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+    setLoading(false)
+    return () => {
+        console.log('TaskList component is going to unmount')
+    };
+}, [tasks]);
+
 
     return (
         <div>
@@ -28,14 +44,20 @@ const defaultTask = new Task('Example', 'default description', false, LEVELS.NOR
                             </tr>
                             </thead>
                             <tbody>
-                                {/* TODO: iterar sobre una lista de tareas */}
-                                <TaskComponent task={ defaultTask }></TaskComponent>
+
+                            {tasks.map((task, index) => {
+                                return(
+                                    <TaskComponent key ={index} 
+                                        task={ task }>
+                                    </TaskComponent>
+                                )
+                            })}                                
                             </tbody>
                         </table>
                     </div>
+                    <TaskForm></TaskForm>
                 </div>                
             </div>        
-            <TaskComponent task={ defaultTask }></TaskComponent>    
         </div>
     );
 };

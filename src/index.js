@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 
 //Añadimos Bootstrap encima de los estilos
 import 'bootstrap/dist/css/bootstrap.css';
-
+//Bootstrap Icons
+import 'bootstrap-icons/font/bootstrap-icons.css'
 //Estilos propios debajo del de bootstrap
 import './index.css';
 import App from './App';
