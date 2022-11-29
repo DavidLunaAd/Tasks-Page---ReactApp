@@ -8,21 +8,20 @@ import GreetingStyled from './components/pure/forms/greetingStyled';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Greeting name= "Juanito"></Greeting>
-        <GreetingF name= "Carlos"></GreetingF>
+      {/*<header className="App-header"> */}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        {/* <Greeting name= "Juanito"></Greeting> */}
+        {/* <GreetingF name= "Carlos"></GreetingF> */}
         <TaskListComponent></TaskListComponent>
         <GreetingStyled name="LucosJes"></GreetingStyled>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        > 
+        </a>*/}
+      {/* </header> */}
     </div>
   );
 }
