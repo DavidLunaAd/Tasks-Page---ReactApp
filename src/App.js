@@ -3,6 +3,7 @@ import './App.css';
 import Greeting from './components/pure/greeting';
 import GreetingF from './components/pure/greetingF';
 import TaskListComponent from './components/container/task_list';
+import GreetingStyled from './components/pure/forms/greetingStyled';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Greeting name= "Juanito"></Greeting>
         <GreetingF name= "Carlos"></GreetingF>
         <TaskListComponent></TaskListComponent>
+        <GreetingStyled name="LucosJes"></GreetingStyled>
         <a
           className="App-link"
           href="https://reactjs.org"

@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+//Añadimos Bootstrap encima de los estilos
+import 'bootstrap/disct/css/bootstrap.css';
+
+//Estilos propios debajo del de bootstrap
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';

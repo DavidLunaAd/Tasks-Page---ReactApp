@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Task } from '../../models/task.class';
+import '../../styles/task.scss';
 
 
 const TaskComponent = ({task}) => {
     return (
         <div>
-        <h2>Nombre: { task.name }</h2>
+        <h2 className='task-name'>Nombre: { task.name }</h2>
         <h3>Descripción: { task.descripcion }</h3>
         <h4>Level: { task.level }</h4>
         
@@ -19,6 +20,5 @@ const TaskComponent = ({task}) => {
 TaskComponent.propTypes = {
     task: PropTypes.instanceOf(Task)
 };
-
 
 export default TaskComponent;
