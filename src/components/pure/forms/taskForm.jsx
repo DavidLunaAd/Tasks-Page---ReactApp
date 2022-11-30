@@ -42,7 +42,7 @@ const TaskForm = ({add}) => {
                 </select>
 
             </div>
-            <button type='submit' className='btn btn-succes btn-lg ms-4'>Add</button>
+            <button type='submit' className='btn btn-success btn-lg ms-4'>Add</button>
         </form>
     );
 }
