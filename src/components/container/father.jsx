@@ -3,7 +3,6 @@ import Child from '../pure/child';
 
 const Father = () => {
 
-
     const [name, setName] = useState('N');
 
         function showMessage (text){

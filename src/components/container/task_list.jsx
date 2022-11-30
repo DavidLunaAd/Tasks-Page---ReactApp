@@ -23,6 +23,30 @@ useEffect(() => {
     };
 }, [tasks]);
 
+    function completeTask(task){
+        console.log('Complete this task', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks[index].completed = !tempTasks[index].completed;
+        setTasks(tempTasks);
+    }
+
+    function deleteTask(task){
+        console.log('Delete this task', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.splice(index, 1);
+        setTasks(tempTasks);
+    }
+
+    function addTask(task){
+        console.log('Add this task', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.push(task);
+        setTasks(tempTasks);
+
+    }
 
     return (
         <div>
@@ -48,16 +72,18 @@ useEffect(() => {
                             {tasks.map((task, index) => {
                                 return(
                                     <TaskComponent key ={index} 
-                                        task={ task }>
+                                        task={ task }
+                                        complete={completeTask}
+                                        remove={deleteTask}>
                                     </TaskComponent>
                                 )
                             })}                                
                             </tbody>
                         </table>
                     </div>
-                    <TaskForm></TaskForm>
                 </div>                
             </div>        
+            <TaskForm add={addTask}></TaskForm>
         </div>
     );
 };
