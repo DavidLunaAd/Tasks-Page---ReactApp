@@ -17,7 +17,9 @@ const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
 const [loading, setLoading] = useState(true);
 
 useEffect(() => {
-    setLoading(false)
+    setTimeout(() => {
+        setLoading(false)
+    },3000);
     return () => {
         console.log('TaskList component is going to unmount')
     };
@@ -48,6 +50,52 @@ useEffect(() => {
 
     }
 
+    const Table = () => {
+        return(
+            <table>
+                <thead>
+                <tr>
+                    <th scope='col'>Title</th>
+                    <th scope='col'>Description</th>
+                    <th scope='col'>Priority</th>
+                    <th scope='col'>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {tasks.map((task, index) => {
+                    return(
+                        <TaskComponent key ={index} 
+                            task={ task }
+                            complete={completeTask}
+                            remove={deleteTask}>
+                        </TaskComponent>
+                    )
+                })}                                
+                </tbody>
+            </table>
+        )
+    }
+
+    let tasksTable
+
+    if (tasks.length > 0){
+        tasksTable = <Table></Table>
+    }else{
+        tasksTable = (
+        <div>
+            <h3>No hay tareas que mostrar</h3>
+            <h4>Puedes crear nuevas tareas </h4>
+        </div>)
+    }
+
+    const loadingStyle = {
+        color: 'grey',
+        fontSize: '20px',
+        fontWeight: 'bold'
+
+    }
+
     return (
         <div>
             <div className='col-12'>
@@ -58,32 +106,11 @@ useEffect(() => {
                     </div>
                     {/* Card Body */}
                     <div className='card-body' data-mdb-perfect-scrollbar='true' style={ { position: 'relative', height: '400px'}}>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th scope='col'>Title</th>
-                                <th scope='col'>Description</th>
-                                <th scope='col'>Priority</th>
-                                <th scope='col'>Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            {tasks.map((task, index) => {
-                                return(
-                                    <TaskComponent key ={index} 
-                                        task={ task }
-                                        complete={completeTask}
-                                        remove={deleteTask}>
-                                    </TaskComponent>
-                                )
-                            })}                                
-                            </tbody>
-                        </table>
+                        {loading ? <p style={loadingStyle}>Cargando tareas...</p> : tasksTable}
                     </div>
                 </div>                
             </div>        
-            <TaskForm add={addTask}></TaskForm>
+            <TaskForm add={addTask} lenght={tasks.length}></TaskForm>
         </div>
     );
 };

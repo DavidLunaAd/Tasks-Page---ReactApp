@@ -5,6 +5,7 @@ import GreetingF from './components/pure/greetingF';
 import TaskListComponent from './components/container/task_list';
 import GreetingStyled from './components/pure/forms/greetingStyled';
 import Father from './components/container/father';
+import LoginFormik from './components/pure/forms/loginFormik';
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         <TaskListComponent></TaskListComponent>
         {/* <Father></Father> */}
         <GreetingStyled name="LucosJes"></GreetingStyled>
+
+        {/* Ejemplo uso Formik */}
+        <LoginFormik></LoginFormik>
+        
         {/* <a
           className="App-link"
           href="https://reactjs.org"
