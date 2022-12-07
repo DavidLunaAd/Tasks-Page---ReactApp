@@ -10,7 +10,6 @@ const TaskComponent = ({task, complete, remove}) => {
     const completed = () =>(<i onClick={() => complete(task)}className="bi-toggle-on task-action" style={{color: 'green' , fontWeight: 'bold'}}></i>);
     const pending = () => (<i onClick={() => complete(task)} className="bi-toggle-off task-action" style={{color: 'grey'}}></i>);
 
-
     function taskLevelBadge(){
         switch (task.level){
             case LEVELS.NORMAL:
@@ -42,7 +41,6 @@ const TaskComponent = ({task, complete, remove}) => {
         }
     }
 
-
     const taskCompleted = {
         color: 'grey',
         textDecoration: 'line-through'
@@ -52,8 +50,6 @@ const TaskComponent = ({task, complete, remove}) => {
         fontWeight: 'bold',
         color: 'tomato'
     }
-
-
 
     return (
 
@@ -71,7 +67,6 @@ const TaskComponent = ({task, complete, remove}) => {
                 {task.completed ? completed() : pending()}
                 <i onClick={() => remove(task)} className='bi bi-trash task-action' style={{color: 'tomato'}}></i>
             </td>
-
         </tr>
         // <div>
         // <h2 className='task-name'>Nombre: { task.name }</h2>

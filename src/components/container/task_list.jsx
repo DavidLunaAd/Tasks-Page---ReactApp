@@ -11,15 +11,13 @@ const defaultTask1 = new Task('Example1', 'default description', true, LEVELS.BL
 const defaultTask2 = new Task('Example2', 'default description', false, LEVELS.NORMAL);
 const defaultTask3 = new Task('Example3', 'default description', false, LEVELS.URGENT);
 
-
-
 const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
 const [loading, setLoading] = useState(true);
 
 useEffect(() => {
     setTimeout(() => {
         setLoading(false)
-    },3000);
+    },2000);
     return () => {
         console.log('TaskList component is going to unmount')
     };

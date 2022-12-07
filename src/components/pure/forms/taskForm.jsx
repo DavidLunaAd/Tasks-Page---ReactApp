@@ -55,7 +55,6 @@ const TaskForm = ({add, lenght}) => {
                 </select>
                 <button type='submit' className='btn btn-success btn-lg ms-4'>{lenght == 0 ? 'Create your first task' : 'Add task'}</button>
             </div>
-            
         </form>
     );
 }
