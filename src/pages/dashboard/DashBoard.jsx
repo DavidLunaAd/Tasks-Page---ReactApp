@@ -13,7 +13,7 @@ const DashBoardPage = () => {
 
   return (
     <div><h2>DashBoard</h2>
-        <Button variant="contained" onClick={logout}>History button</Button>
+        <Button variant="contained" onClick={logout}>Logout</Button>
         <Copyright></Copyright>
     </div>
   );

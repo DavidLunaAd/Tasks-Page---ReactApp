@@ -3,6 +3,8 @@ import React from 'react'
 import NotfoundPage from './pages/404/NotfoundPage';
 import LoginPage from './pages/auth/LoginPage';
 import DashBoardPage from './pages/dashboard/DashBoard';
+import FetchExample from './pages/FetchExample';
+import AxiosExample from './pages/AxiosExample';
 
 
 function AppRouting() {
@@ -16,6 +18,8 @@ function AppRouting() {
         {/* Route Switch */}
         <Routes>
             {/* Redirections to project our routes */}
+            <Route exact path = '/fetch' element={<AxiosExample/>}/>
+            {/* <Route exact path = '/fetch' element={<FetchExample/>}/> */}
             <Route exact path ='/'
             element =
                 {
