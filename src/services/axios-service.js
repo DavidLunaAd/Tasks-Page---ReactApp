@@ -1,7 +1,7 @@
-import APIRquest from "../utils/config/axios.config";
+import APIRequest from "../utils/config/axios.config";
 
 export function getRandomUser(){
-    return APIRquest.get('/', {
+    return APIRequest.get('/', {
         validateStatus: function (status) {
             return status < 500; // defecto
         }});
