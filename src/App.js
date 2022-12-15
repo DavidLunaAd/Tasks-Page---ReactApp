@@ -7,6 +7,7 @@ import GreetingStyled from './components/pure/forms/greetingStyled';
 import Father from './components/container/father';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
+import AxiosCrudExample from './components/pure/AxiosCrudExample';
 
 function App() {
   return (
@@ -21,9 +22,12 @@ function App() {
 
         {/* Ejemplo uso Formik */}
         {/* <LoginFormik></LoginFormik> */}
+
+        {/* axios Ejemplo CRUD */}
+        <AxiosCrudExample></AxiosCrudExample>
         
         {/* Register Formik */}
-        <RegisterFormik></RegisterFormik>
+        {/* <RegisterFormik></RegisterFormik> */}
         {/* <a
           className="App-link"
           href="https://reactjs.org"
