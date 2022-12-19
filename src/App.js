@@ -16,7 +16,7 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <Greeting name= "Juanito"></Greeting> */}
         {/* <GreetingF name= "Carlos"></GreetingF> */}
-        {/* <TaskListComponent></TaskListComponent> */}
+        <TaskListComponent></TaskListComponent>
         {/* <Father></Father> */}
         {/* <GreetingStyled name="LucosJes"></GreetingStyled> */}
 

@@ -1,9 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
 
 
-import { login, getAllUsers, getAllPagedUsers, getUserById, createUser } from '../../services/axiosCRUDservice'
+import { login, getAllUsers, getAllPagedUsers, getUserById, createUser, updateUser, deleteUser } from '../../services/axiosCRUDservice'
 
 const AxiosCrudExample = () => {
 
@@ -78,6 +79,32 @@ const AxiosCrudExample = () => {
     .catch((error) => alert(`Something went wrong: ${error}`))
   }
 
+  
+  const updateUserById = (id, name, job) =>{
+    updateUser(id, name, job).then((response) => {
+        if(response.data && response.status === 200) {
+            alert(JSON.stringify(response.data))
+        }else{
+            throw new Error ('Failed')
+        }
+        
+    })
+    .catch((error) => alert(`Something went wrong: ${error}`))
+  }
+
+  const deleteUserById = (id) => {
+    deleteUser(id)
+    .then((response) => {
+        if(response.status === 204) {
+            alert(`User with ir: ${id} successfully deleted`)
+        }else{
+            throw new Error ('Fialed')
+        }        } )
+    .catch((error) => alert(`Something went wrong`))
+}
+
+const navigate = useNavigate();
+
     return (
     // <div>
     //     AxiosCrudExample
@@ -85,7 +112,9 @@ const AxiosCrudExample = () => {
     //     <button onClick={authUser}>CRUD</button>
     // </div>
     <div>
-      <h1>Formik</h1>
+      <div>
+      <h5>Axios example</h5>
+      <h5>Form whit axios n formik</h5>
       <Formik
         //Initial values
         initialValues={initialCredentials}
@@ -133,8 +162,12 @@ const AxiosCrudExample = () => {
         )
         }
       </Formik>
+      </div>
+      <br></br>
+
       {/* Example button test API responses */}
         <div>
+        <h5>CRUD Example whit axios</h5>
             <button onClick={obtainAllUsers}>
                 Get all users
             </button>
@@ -145,7 +178,13 @@ const AxiosCrudExample = () => {
                 Obtain (1) users
             </button>
             <button onClick={() => createNewUser('morpheus', 'leader')}>
-                Create User
+                Create User: 'Morpheus - Leader'
+            </button>
+            <button onClick={() => updateUserById(2, 'morpheus', 'zion resident')}>
+                Update User: 'Morpheus'
+            </button>
+            <button onClick={() => deleteUserById(2)}>
+                Delete User: 'Morpheus - Leader'
             </button>
         </div>
     </div>
