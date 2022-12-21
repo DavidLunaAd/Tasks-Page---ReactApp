@@ -25,20 +25,17 @@ class Greeting extends Component {
         );
     }
 
-birthday = () => {
-    this.setState((prevState) =>(
-        {
-            age: prevState.age + 1
-        }
-    ))
+    birthday = () => {
+        this.setState((prevState) =>(
+            {
+                age: prevState.age + 1
+            }
+        ))
+    }
 }
-
-}
-
 
 Greeting.propTypes = {
     name: PropTypes.string,
 };
-
 
 export default Greeting;

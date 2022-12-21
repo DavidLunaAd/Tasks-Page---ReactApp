@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
+import Example from '../../hooks/Example';
 
 
 import { login, getAllUsers, getAllPagedUsers, getUserById, createUser, updateUser, deleteUser } from '../../services/axiosCRUDservice'
@@ -103,7 +104,7 @@ const AxiosCrudExample = () => {
     .catch((error) => alert(`Something went wrong`))
 }
 
-const navigate = useNavigate();
+//const navigate = useNavigate();
 
     return (
     // <div>
@@ -113,6 +114,10 @@ const navigate = useNavigate();
     // </div>
     <div>
       <div>
+
+    {/* Pintando ejemplo de uso de hooks */}
+      <div><Example></Example></div>
+      
       <h5>Axios example</h5>
       <h5>Form whit axios n formik</h5>
       <Formik

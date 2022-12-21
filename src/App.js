@@ -8,6 +8,8 @@ import Father from './components/container/father';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
 import AxiosCrudExample from './components/pure/AxiosCrudExample';
+import Example from './hooks/Example';
+import MicomponenteConContexto from './hooks/ExampleUsecontext';
 
 function App() {
   return (
@@ -16,7 +18,12 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <Greeting name= "Juanito"></Greeting> */}
         {/* <GreetingF name= "Carlos"></GreetingF> */}
-        <TaskListComponent></TaskListComponent>
+
+        {/* <Example></Example> */}
+
+        {/* Ejemplo Contexto */}
+        <MicomponenteConContexto></MicomponenteConContexto>
+        {/* <TaskListComponent></TaskListComponent> */}
         {/* <Father></Father> */}
         {/* <GreetingStyled name="LucosJes"></GreetingStyled> */}
 
