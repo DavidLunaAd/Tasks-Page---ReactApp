@@ -1,5 +1,4 @@
-# App Tasks - proyecto con ReactJs
-
+# Proyecto con ReactJs
 
 
 ## Available Scripts
